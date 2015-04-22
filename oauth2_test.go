@@ -269,8 +269,8 @@ func TestExchangeRequest_NonBasicAuth(t *testing.T) {
 	conf := &Config{
 		ClientID: "CLIENT_ID",
 		Endpoint: Endpoint{
-			AuthURL:  "https://accounts.google.com/auth",
-			TokenURL: "https://accounts.google.com/token",
+			AuthURL:  "https://www.dropbox.com/1/oauth2/authorize",
+			TokenURL: "https://api.dropbox.com/1/oauth2/token",
 		},
 	}
 
