@@ -90,8 +90,6 @@ func (e *expirationTime) UnmarshalJSON(b []byte) error {
 }
 
 var brokenAuthHeaderProviders = []string{
-	"https://accounts.google.com/",
-	"https://www.googleapis.com/",
 	"https://github.com/",
 	"https://api.instagram.com/",
 	"https://www.douban.com/",
@@ -115,7 +113,6 @@ var brokenAuthHeaderProviders = []string{
 // In summary:
 // - Reddit only accepts client secret in the Authorization header
 // - Dropbox accepts either it in URL param or Auth header, but not both.
-// - Google only accepts URL param (not spec compliant?), not Auth header
 // - Stripe only accepts client secret in Auth header with Bearer method, not Basic
 func providerAuthHeaderWorks(tokenURL string) bool {
 	for _, s := range brokenAuthHeaderProviders {

@@ -14,7 +14,7 @@ var webJSONKey = []byte(`
     "web": {
         "auth_uri": "https://google.com/o/oauth2/auth",
         "client_secret": "3Oknc4jS_wA2r9i",
-        "token_uri": "https://google.com/o/oauth2/token",
+        "token_uri": "https://www.googleapis.com/oauth2/v3/token",
         "client_email": "222-nprqovg5k43uum874cs9osjt2koe97g8@developer.gserviceaccount.com",
         "redirect_uris": ["https://www.example.com/oauth2callback"],
         "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/222-nprqovg5k43uum874cs9osjt2koe97g8@developer.gserviceaccount.com",
@@ -51,7 +51,7 @@ func TestConfigFromJSON(t *testing.T) {
 	if got, want := conf.Endpoint.AuthURL, "https://google.com/o/oauth2/auth"; got != want {
 		t.Errorf("AuthURL = %q; want %q", got, want)
 	}
-	if got, want := conf.Endpoint.TokenURL, "https://google.com/o/oauth2/token"; got != want {
+	if got, want := conf.Endpoint.TokenURL, "https://www.googleapis.com/oauth2/v3/token"; got != want {
 		t.Errorf("TokenURL = %q; want %q", got, want)
 	}
 }
